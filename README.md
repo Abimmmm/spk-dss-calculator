@@ -7,7 +7,7 @@ Kalkulator sistem pendukung keputusan (SPK) multi-kriteria untuk menghitung peri
 - **MEREC** (Method based on the Removal Effects of Criteria) — pembobotan kriteria
 - **MARCOS** (Measurement of Alternatives and Ranking according to Compromise Solution) — utility dan ranking akhir
 
-![Tampilan DSS Calculator](preview.jpg)
+![Tampilan DSS Calculator](preview.png)
 
 ## Fitur
 
