@@ -7,14 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: { sans: ["Inter", "sans-serif"], mono: ["JetBrains Mono", "monospace"] },
+            fontFamily: { sans: ["Inter Tight", "sans-serif"], mono: ["JetBrains Mono", "monospace"] },
           },
         },
       };
@@ -24,29 +24,30 @@
         box-sizing: border-box;
       }
       :root {
-        --c1: #fff9d2;
-        --c2: #ffebcc;
-        --c3: #bfddf0;
-        --c4: #8cc0eb;
-        --text: #263238;
-        --muted: #5e6b73;
-        --border: #afcde3;
-        --card: #ffffff;
+        --c1: #f2f1ec;
+        --c2: #e3ece6;
+        --c3: #d3e4da;
+        --c4: #1e4d3b;
+        --text: #101418;
+        --muted: #5c646a;
+        --border: #d2d0c6;
+        --card: #fbfaf7;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
         background: var(--c1);
         color: var(--text);
         margin: 0;
+        -webkit-font-smoothing: antialiased;
       }
       .glass {
-        background: rgba(255, 255, 255, 0.88);
+        background: rgba(251, 250, 247, 0.94);
         backdrop-filter: blur(8px);
         border: 1px solid var(--border);
-        box-shadow: 0 8px 24px rgba(140, 192, 235, 0.16);
+        box-shadow: 0 10px 26px rgba(16, 20, 24, 0.05);
       }
       .glow {
-        box-shadow: 0 0 18px rgba(140, 192, 235, 0.55);
+        box-shadow: 0 8px 22px rgba(30, 77, 59, 0.16);
       }
       .badge {
         font-family: "JetBrains Mono", monospace;
@@ -62,6 +63,7 @@
         font-weight: 700;
         white-space: nowrap;
         color: var(--text);
+        letter-spacing: 0.01em;
       }
       td {
         padding: 7px 10px;
@@ -73,7 +75,7 @@
         border: 1px solid var(--border);
       }
       tr:nth-child(even) td {
-        background: rgba(191, 221, 240, 0.32);
+        background: rgba(30, 77, 59, 0.035);
       }
       tr:hover td {
         background: var(--c2);
@@ -99,7 +101,7 @@
         background: var(--c1);
       }
       ::-webkit-scrollbar-thumb {
-        background: var(--c4);
+        background: #9bb3a6;
         border-radius: 8px;
       }
       input[type="number"]::-webkit-inner-spin-button {
@@ -156,29 +158,29 @@
         border-color: var(--border) !important;
       }
       input,
-      select {
-        background: #fff !important;
+      select,
+      textarea {
+        background: var(--card) !important;
         color: var(--text) !important;
         border-color: var(--border) !important;
       }
       input:focus,
-      select:focus {
+      select:focus,
+      textarea:focus {
         border-color: var(--c4) !important;
-        box-shadow: 0 0 0 3px rgba(140, 192, 235, 0.22) !important;
+        box-shadow: 0 0 0 3px rgba(30, 77, 59, 0.14) !important;
       }
       button {
         color: var(--text) !important;
+        border-radius: 7px;
       }
       [style*="background:#3B82F6"],
       [style*="background:#10B981"],
       [style*="background:#8B5CF6"],
-      [style*="background:#6366F1"] {
-        background: var(--c4) !important;
-        color: var(--text) !important;
-      }
+      [style*="background:#6366F1"],
       [style*="background:linear-gradient"] {
-        background: linear-gradient(135deg, var(--c3), var(--c4)) !important;
-        color: var(--text) !important;
+        background: var(--c4) !important;
+        color: #f2f1ec !important;
       }
       [style*="#60A5FA"],
       [style*="#93C5FD"],
@@ -193,6 +195,277 @@
       [style*="#334155"],
       [style*="#475569"] {
         border-color: var(--border) !important;
+      }
+
+      /* ---------- Editorial refresh ---------- */
+      body {
+        font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: -0.005em;
+      }
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.025em;
+      }
+      .glass {
+        border-radius: 8px;
+      }
+      header.glass {
+        background: #101418 !important;
+        border-color: #252c30 !important;
+        box-shadow: none !important;
+      }
+      header.glass h1 {
+        color: #f2f1ec !important;
+        font-size: 14px;
+        letter-spacing: -0.02em;
+      }
+      header.glass p {
+        color: #9ca7ad !important;
+      }
+      header.glass .text-white {
+        color: #f2f1ec !important;
+      }
+      header.glass .glow {
+        background: #1e4d3b !important;
+        box-shadow: none !important;
+      }
+      header.glass button {
+        background: #242b30 !important;
+        border: 1px solid #3a444b !important;
+        color: #e6ebe7 !important;
+      }
+      aside.glass {
+        background: #fbfaf7 !important;
+        border-color: #d6d3c9 !important;
+        box-shadow: none !important;
+        padding: 22px 16px;
+      }
+      aside .text-slate-500,
+      aside .text-slate-400 {
+        color: var(--muted) !important;
+      }
+      aside .text-white {
+        color: var(--text) !important;
+      }
+      aside .bg-slate-800\/60 {
+        background: #eef1ec !important;
+        border-color: #d6ddd7 !important;
+      }
+      aside input {
+        background: #ffffff !important;
+        color: var(--text) !important;
+      }
+      main {
+        padding: 28px !important;
+      }
+      .glass.rounded-xl,
+      .glass.rounded-lg {
+        border-radius: 8px !important;
+      }
+      .shadow-lg {
+        box-shadow: none !important;
+      }
+      /* Buttons: flat, high-contrast, no gradients */
+      button[onclick="calculateAll()"],
+      button[onclick="exportResults()"],
+      button[onclick="buildMatrix()"] {
+        background: var(--c4) !important;
+        color: #f2f1ec !important;
+        border: 1px solid var(--c4) !important;
+      }
+      button[onclick="calculateAll()"] svg,
+      button[onclick="exportResults()"] svg,
+      button[onclick="buildMatrix()"] svg {
+        color: #f2f1ec !important;
+      }
+      button[onclick="calculateAll()"]:hover,
+      button[onclick="exportResults()"]:hover,
+      button[onclick="buildMatrix()"]:hover {
+        background: #296a52 !important;
+        border-color: #296a52 !important;
+      }
+      button[onclick="fillSample()"],
+      button[onclick="exportTemplate()"] {
+        background: #ffffff !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
+      }
+      button[onclick="fillSample()"]:hover,
+      button[onclick="exportTemplate()"]:hover {
+        background: var(--c2) !important;
+        border-color: #b9c8be !important;
+      }
+      /* Method tabs: sage active state */
+      #btn-gra,
+      #btn-merec_marcos,
+      #btn-combined {
+        border-radius: 7px !important;
+      }
+      /* Step and result accents */
+      .pill {
+        border-radius: 5px;
+        letter-spacing: 0.02em;
+      }
+      .fade-in {
+        animation-duration: 0.25s;
+      }
+      /* Table polish */
+      th,
+      td {
+        border-color: #d9d6cc !important;
+      }
+      th {
+        background: #e1ebe4 !important;
+        color: #2b342e !important;
+        font-size: 10.5px;
+        letter-spacing: 0.02em;
+      }
+      table {
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      /* Inputs */
+      input[type="number"] {
+        font-family: "JetBrains Mono", monospace !important;
+        font-size: 12px !important;
+      }
+      /* Formula / note boxes keep a quiet paper tone */
+      .badge {
+        letter-spacing: 0.01em;
+      }
+      /* Remove the old blue glow on the logo mark */
+      .glow {
+        box-shadow: none;
+      }
+      /* Better focus visibility */
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 2px solid var(--c4);
+        outline-offset: 2px;
+      }
+      @media (max-width: 1024px) {
+        main {
+          padding: 18px !important;
+        }
+      }
+
+      /* Tailwind blue remnants */
+      .bg-blue-600\/20,
+      .bg-blue-900\/60,
+      .bg-blue-50 {
+        background: var(--c3) !important;
+      }
+      .text-blue-300,
+      .text-blue-400,
+      .text-blue-500,
+      .text-blue-600 {
+        color: var(--c4) !important;
+      }
+      .border-blue-600\/40,
+      .border-blue-700\/50,
+      .border-blue-500,
+      .border-blue-200 {
+        border-color: #b9c8be !important;
+      }
+      /* Dynamic result colours generated in JS */
+      [style*="background: #10b981"],
+      [style*="background:#10b981"],
+      [style*="background: #10B981"],
+      [style*="background:#10B981"] {
+        background: var(--c4) !important;
+        color: #f2f1ec !important;
+        border-color: var(--c4) !important;
+      }
+      [style*="background: #10b981"] svg,
+      [style*="background:#10b981"] svg {
+        color: #f2f1ec !important;
+      }
+      [style*="background:#3B82F6"],
+      [style*="background:#3b82f6"],
+      [style*="background:#8B5CF6"],
+      [style*="background:#8b5cf6"],
+      [style*="background:#FCD34D"],
+      [style*="background:#fcd34d"] {
+        background: var(--c4) !important;
+        color: #f2f1ec !important;
+      }
+      [style*="rgba(16,185,129"] {
+        background: var(--c2) !important;
+        border-color: #c2d6c8 !important;
+        color: var(--c4) !important;
+      }
+      [style*="rgba(245,158,11"] {
+        background: #eef2ec !important;
+        border-color: #cfdcd3 !important;
+        color: #46624f !important;
+      }
+      [style*="rgba(139,92,246"] {
+        background: var(--c3) !important;
+        border-color: #b9c8be !important;
+        color: var(--c4) !important;
+      }
+      [style*="rgba(30,41,59"] {
+        background: #eef1ec !important;
+        border-color: #d6ddd7 !important;
+        color: var(--muted) !important;
+      }
+      [style*="#A78BFA"],
+      [style*="#8B5CF6"],
+      [style*="#10B981"],
+      [style*="#10b981"] {
+        color: var(--c4) !important;
+      }
+      [style*="#FCD34D"],
+      [style*="#F59E0B"] {
+        color: #46624f !important;
+      }
+      [style*="#60A5FA"],
+      [style*="#94A3B8"] {
+        color: var(--muted) !important;
+      }
+      [style*="background:#0F172A"],
+      [style*="background: #0F172A"] {
+        background: var(--card) !important;
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      [style*="#334155"] {
+        border-color: var(--border) !important;
+      }
+      [style*="rgba(59, 130, 246"],
+      [style*="rgba(59,130,246"] {
+        background: var(--c2) !important;
+        border-color: #c2d6c8 !important;
+        color: var(--text) !important;
+      }
+      [style*="rgba(15,23,42,0.6)"],
+      [style*="rgba(15, 23, 42, 0.6)"] {
+        background: #e8eee9 !important;
+      }
+      [style*="background: #10b981"],
+      [style*="background:#10b981"],
+      [style*="background: #10B981"],
+      [style*="background:#10B981"] {
+        color: #f2f1ec !important;
+      }
+      [style*="background: #10b981"] svg,
+      [style*="background:#10b981"] svg {
+        color: #f2f1ec !important;
+      }
+      [style*="background:#3B82F622"],
+      [style*="background:#10B98122"],
+      [style*="background:#8B5CF622"],
+      [style*="background:#FCD34D22"] {
+        background: var(--c2) !important;
+        color: var(--c4) !important;
+        border-color: #c2d6c8 !important;
+      }
+      [style*="background:#F59E0B"],
+      [style*="background:#f59e0b"] {
+        background: var(--c4) !important;
       }
     </style>
   </head>
@@ -490,16 +763,16 @@
       };
 
       const PALETTE = {
-        c1: "#FFF9D2",
-        c2: "#FFEBCC",
-        c3: "#BFDDF0",
-        c4: "#8CC0EB",
-        text: "#263238",
-        muted: "#5E6B73",
-        border: "#AFCDE3",
-        card: "#FFFFFF",
+        c1: "#f2f1ec",
+        c2: "#e3ece6",
+        c3: "#d3e4da",
+        c4: "#1e4d3b",
+        text: "#101418",
+        muted: "#5c646a",
+        border: "#d2d0c6",
+        card: "#fbfaf7",
       };
-      const rankColors = [PALETTE.c4, PALETTE.c3, PALETTE.c2, PALETTE.c1];
+      const rankColors = ["#1e4d3b", "#5f8b76", "#a9c6b5", "#dbe8e0"];
 
       function escHTML(v) {
         return String(v ?? "").replace(
@@ -869,8 +1142,8 @@
       function showNotif(msg, color = "blue") {
         const el = document.createElement("div");
         el.textContent = msg;
-        const bg = color === "green" ? PALETTE.c3 : PALETTE.c4;
-        el.style.cssText = `position:fixed;top:60px;right:16px;z-index:9999;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:700;color:${PALETTE.text};background:${bg};border:1px solid ${PALETTE.border};box-shadow:0 4px 20px rgba(140,192,235,.35);transition:opacity .4s`;
+        const bg = PALETTE.c3;
+        el.style.cssText = `position:fixed;top:60px;right:16px;z-index:9999;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;color:${PALETTE.text};background:${bg};border:1px solid ${PALETTE.border};box-shadow:0 8px 24px rgba(16,20,24,.12);transition:opacity .4s`;
         document.body.appendChild(el);
         setTimeout(() => {
           el.style.opacity = "0";
@@ -1140,7 +1413,7 @@
             const pct2 = total === 1 ? 100 : Math.max(12, 100 - (r.rank - 1) * (78 / (total - 1)));
             const c = rankColors[(r.rank - 1) % rankColors.length];
             return `<div class="p-3 rounded-xl mb-2 flex items-center gap-3" style="background:${PALETTE.card};border:1px solid ${r.rank === 1 ? PALETTE.c4 : PALETTE.border}">
-      <span class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0" style="background:${c};color:${PALETTE.text}">${r.rank}</span>
+      <span class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0" style="background:${c};color:${r.rank === 1 ? '#f2f1ec' : PALETTE.text}">${r.rank}</span>
       <div class="flex-1 min-w-0">
         <div class="flex items-center justify-between mb-1">
           <span class="text-sm font-semibold truncate">${escHTML(r.name)}</span>
